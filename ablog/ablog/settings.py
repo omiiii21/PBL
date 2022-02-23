@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-kqd36m@y6=x7$v+9!tudr2eg9g6q@a9h&yqgcvea4w5c19=n-+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://sym-fi.herokuapp.com"]
 
 STATICFILES_DIRS=[
     "C:/Users/Dell/Desktop/PBL/ablog/theblog/static",
