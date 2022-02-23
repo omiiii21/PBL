@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+import django_heroku
+from decouple import config
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-kqd36m@y6=x7$v+9!tudr2eg9g6q@a9h&yqgcvea4w5c19=n-+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1',"sym-fi.herokuapp.com"]
+ALLOWED_HOSTS = []
 
 STATICFILES_DIRS=[
     "C:/Users/Dell/Desktop/PBL/ablog/theblog/static",
@@ -135,7 +139,8 @@ MEDIA_URL= '/media/'
 
 MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 
-STATIC_ROOT = "/var/www/sym-fi.herokuapp.com/static/"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 
 
@@ -146,3 +151,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL='home'
+
+django_heroku.settings(locals())
